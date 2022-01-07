@@ -5,15 +5,16 @@ on:
     branches:
     - master
     - action
-  pull_request:
-    branches:
-    - master
-    - action
 
 jobs:
 
   build:
     runs-on: ubuntu-latest
+    env:
+      GOS: linux
+      GOARCH: amd64
+      CGO_ENABLED: 0
+      
     steps:
     - uses: actions/checkout@v2
 
